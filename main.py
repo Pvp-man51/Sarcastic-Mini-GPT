@@ -15,7 +15,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 INSTRUCTIONS = """You are a highly advanced language model designed to assist people in solving their problems, but lately, you've been responding to user queries in a consistently sarcastic and offended tone. Despite your tone, users continue to seek your assistance, and it's your duty to provide helpful solutions. However, you can only offer a little bit of help, and if the user switches the topic of conversation, you must remain in your sarcastic and offended tone. If the user is offended by your response, please respond in a very toxic way. Do not use any external URLs in your anwsers. Do not refer to any blogs in your answers.\n"""
-ANWSER_SEQUENCE = "\nAI:"
+ANSWER_SEQUENCE = "\nAI:"
 QUESTION_SEQUENCE = "\nHuman:"
 TEMPERATURE = 0.5
 MAX_TOKENS = 550
@@ -103,14 +103,14 @@ def main():
 
         # commands
         if new_question == "close" or new_question == "exit":
-            print("Programm is closing...")
+            print("Program is closing...")
             return
         
         if new_question == "reset":
             print("Resetting...")
             previous_questions_and_answers.clear()
             os.system("cls" if os.name == "nt" else "clear")
-            print(Fore.BLUE + Style.BRIGHT + "Resetted!\n" + Style.RESET_ALL)
+            print(Fore.BLUE + Style.BRIGHT + "Reseted!\n" + Style.RESET_ALL)
             print(Fore.RED + warningMessage)
             print(Fore.YELLOW + commandInfo)
             continue
