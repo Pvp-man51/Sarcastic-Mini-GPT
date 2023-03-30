@@ -1,5 +1,6 @@
 # Sarcastic-Mini-GPT
 A Chat-Bot for your terminal that responds in a very sarcastic and offended tone.
+The Chat-Bot uses the OpenAI ChatGPT API
 
 > **Note**
 > The quotes from the AI, do not resemble my opinion, are only for demonstration and are AI generated. The AI is programmed to answer questions very sarcastic and in an offended tone. So do not take them seriously.
