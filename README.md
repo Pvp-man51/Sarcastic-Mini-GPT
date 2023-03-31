@@ -69,7 +69,7 @@ pip install pyinstaller
 ```
 2. Once installed put the following command into the terminal:
 ```bash
-pyinstaller --clean -y -n "Mini GPT" --hidden-import=os  --hidden-import=openai --hidden-import=dotenv --hidden-import=colorama -F main.py
+pyinstaller --clean -y -n "Mini GPT" --add-data='.env;.' --hidden-import=os --hidden-import=sys --hidden-import=openai --hidden-import=dotenv --hidden-import=colorama -F main.py
 ```
 3. A folder named "dist" should appear in the project directory. In it the executable named "Mini GPT.exe".
 4. Double click on the file to run it

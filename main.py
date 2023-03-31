@@ -1,4 +1,5 @@
 import os
+import sys
 import openai
 from dotenv import load_dotenv, find_dotenv
 from colorama import init, Fore, Back, Style
@@ -8,7 +9,10 @@ os.system("title " + "Mini GPT")
 init()
 
 # load values form the .env file if exists
-load_dotenv(find_dotenv())
+extDataDir = os.getcwd()
+if getattr(sys, 'frozen', False):
+    extDataDir = sys._MEIPASS
+load_dotenv(dotenv_path=os.path.join(extDataDir, '.env'))
 
 # configure OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -21,8 +25,7 @@ TEMPERATURE = 0.5
 MAX_TOKENS = 550
 FREQUENCY_PENALTY = 0
 PRESENCE_PENALTY = 0.6
-# limits how many questions we include in the prompt
-MAX_CONTEXT_QUESTIONS = 10
+MAX_CONTEXT_QUESTIONS = 10 # limits how many questions we include in the prompt
 
 warningMessage = """Keep in mind:\n- This AI can and will be very sarcastic/toxic.
 - The AI may occasionally generate incorrect answers.
